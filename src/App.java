@@ -2,16 +2,22 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 import classes.Conta;
+import classes.ContaCorrente;
+import classes.ContaSalario;
 
 public class App {
     public static void main(String[] args) throws Exception {
         ArrayList<Conta> contas = new ArrayList<Conta>();
-
-        contas.add(new Conta(1, 123,
+        contas.add(new ContaCorrente(1, 123,
                 1234, 0,
                 "Cezar Mezzalira",
-                "123.456.789-00", 1,
+                "123.456.789-00",
                 "1234567891234567", "123"));
+        contas.add(new ContaSalario(2, 123,
+                1234, 0,
+                "Cezar Mezzalira",
+                "123.456.789-00",
+                "1234567891234563", "123"));
 
         Scanner scanner = new Scanner(System.in);
         // ENTRADA
@@ -31,12 +37,15 @@ public class App {
         }
 
         if (contaSaque == null) {
+            scanner.close();
             throw new Error("Conta não encontrada");
         }
 
         // 3 - Inserir a senha
         System.out.println("Insira a senha: ");
         String senha = scanner.nextLine();
+
+        scanner.close();
 
         // 4 - Validar a senha (processamento intermediario)
         // se a senha estiver incorreta, vai mostrar um erro e terminar o programa
@@ -54,6 +63,5 @@ public class App {
         // SAÍDA
         // 10 - Encerrar a operação
         // 10.1 - Mostrar o comprovante da transação em tela
-        scanner.close();
     }
 }
