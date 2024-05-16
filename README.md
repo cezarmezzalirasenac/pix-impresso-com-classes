@@ -24,7 +24,9 @@ Sistema de saque rápido em caixas eletrônicos.
 - digitoVerificador
 - nome
 - cpf
-- tipoConta (1-Conta Corrente | 2-Conta Salário | 3 - Conta Poupança)
+- tipoConta (1-Conta Corrente | 
+             2-Conta Salário | 
+             3-Conta Poupança)
 - numeroCartao
 - senha
 
